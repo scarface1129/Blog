@@ -21,9 +21,11 @@ class Blogs(models.Model):
 
 
 class Likes(models.Model):
-	post            = models.ForeignKey(Blogs, on_delete=models.CASCADE)
-	status           = models.CharField(max_length=120)
+	post       = models.ForeignKey(Blogs, on_delete=models.CASCADE)
+	status     = models.CharField(max_length=120)
 	
+	def get_absolute_url(self):
+		return reverse("Blog:Blog_list")
 
 	def __str__(self):
 		return self.post.title.capitalize()

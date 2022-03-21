@@ -1,5 +1,5 @@
 from django import forms
-from .models import Blogs
+from .models import Blogs, Likes
 
 
 class BlogForm(forms.ModelForm):
@@ -10,5 +10,16 @@ class BlogForm(forms.ModelForm):
             'user',
             'title',
             'content',
+                    
+        ]   
+
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Likes 
+        fields = [
+            
+            'post',
+            'status',
                     
         ]   

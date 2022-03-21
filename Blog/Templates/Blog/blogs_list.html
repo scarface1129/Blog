@@ -7,6 +7,11 @@
     <h2>{{obj.title}}</h2>
     <h4>{{obj.content}}</h4>
     <h4>{{obj.user_id}}</h4>
+    <form method = 'POST' action = '{% url 'Blog:likecreate'%}'>{% csrf_token %}
+        <input type="hidden" name="post" value="{{ obj.user_id }}">
+        <input type="hidden" name="status" value= 'True'></input>
+        <button type = 'submit'>Like</button>
+    </form>
 {% endfor %}
 
 {% endblock %}
