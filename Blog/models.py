@@ -9,7 +9,6 @@ class Blogs(models.Model):
 	user            = models.ForeignKey(User, on_delete=models.CASCADE)
 	title           = models.CharField(max_length=120)
 	content         = models.TextField(help_text="separate each item by a comma")
-	
 
 
 	def get_absolute_url(self):
@@ -25,7 +24,7 @@ class Likes(models.Model):
 	status     = models.CharField(max_length=120)
 	
 	def get_absolute_url(self):
-		return reverse("Blog:Blog_list")
+		return reverse("Blog:Blog_detail", kwargs= {'pk':self.post_id})
 
 	def __str__(self):
 		return self.post.title.capitalize()

@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block head_title%} | {{block.super}}  {%endblock%}
+{%block content%}
+
+
+<h1>{{object.title}}</h1>
+<h1>{{object.content}} <small> {{object.user_id}} </small></h1>
+<p>{{object.id}}</p>
+<p> updated {{object.updated | timesince}} ago</p>
+<form method = 'POST' action = '{% url 'Blog:Likecreate'%}'>{% csrf_token %}
+    <input type="hidden" name="post" value="{{ object.id }}">
+    <input type="hidden" name="status" value= 'True'></input>
+    <button type = 'submit'>{{likes}} Likes </button>
+</form>
+
+<form method = 'POST' action = '{% url 'Blog:Commentcreate'%}'>{% csrf_token %}
+    <input type="hidden" name="post" value="{{ object.id }}">
+    <input type="textarea" name="content"></input>
+    <button type = 'submit'>Submit </button>
+</form>
+
+{%endblock%}
