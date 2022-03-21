@@ -1,0 +1,5 @@
+{%extends 'base.html'%}
+{%block head_title%}{{form.instance.name}} | Menu Items | {{block.super}}{%endblock%}
+{%block content%}
+ {% include 'snippet/form_snippet.html' with form=form %}
+{%endblock%}

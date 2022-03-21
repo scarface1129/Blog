@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block head_title %}       {% endblock %}
+{% block content %}
+ 
+{% for obj in object_list %}
+    <h2>{{obj.title}}</h2>
+    <h4>{{obj.content}}</h4>
+    <h4>{{obj.user_id}}</h4>
+{% endfor %}
+
+{% endblock %}
