@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render,get_object_or_404, redirect
 from django.views.generic import DetailView, View, CreateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Blogs, Likes
+from .models import Blogs, Likes, Comments
 from .forms import BlogForm, LikeForm,CommentForm
 from django.urls import reverse
 
@@ -30,10 +30,11 @@ class BlogDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self,*args, **kwargs):
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
-        Blog = self.kwargs['pk']
-        Like = Likes.objects.filter(post_id = Blog).count()
+        pk = self.kwargs['pk']
+        Like = Likes.objects.filter(post_id = pk).count()
+        comment = Comments.objects.filter(post_id = pk)
         context['likes'] = Like
-        print(context)
+        context['comment'] = comment
         return context
 
 class BlogCreateView(LoginRequiredMixin, CreateView):

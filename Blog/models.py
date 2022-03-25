@@ -35,7 +35,8 @@ class Comments(models.Model):
 	post            = models.ForeignKey(Blogs, on_delete=models.CASCADE)
 	content         = models.TextField(help_text="separate each item by a comma")
 	
-
+	def get_absolute_url(self):
+		return reverse("Blog:Blog_detail", kwargs= {'pk':self.post_id})	
 	def __str__(self):
 		return self.post.title.capitalize()
 
