@@ -8,7 +8,6 @@ from django.db.models.signals import post_save
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-
 class User(AbstractUser):
     # my_custom_field = models.CharField(max_length=2)
     activation_key     = models.CharField(max_length=120, blank=True, null=True)

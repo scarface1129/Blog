@@ -1,18 +1,538 @@
+<div class="hero-unit">
+    <div id="featured-news-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+                <div class="carousel-item post-presentation lazy active background"
+                data-src="https://images.unsplash.com/photo-1519125478587-9e2e97231d2c?ixlib&#x3D;rb-0.3.5&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ&amp;s&#x3D;f555c229fd7926ccd7b3c41a288a2f54">
+                    <div class="gradient gradient1 d-flex align-items-center">
+                        <div class="container d-flex align-items-center">
+                            <div class="row">
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <span class="badge animated fadeInDown post-visibility post-paid">paid</span>
+                                    <h1 class="animated fadeInUp">Thor, the Nordic God</h1>
+                                    <div class="post-tags animated fadeIn">
+                                            <a href="tag/history/index.html">History</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <p class="animated fadeInDown d-none d-md-block spacing-paid">Thor is a prominently mentioned god throughout the recorded history of the Germanic peoples, from the Roman occupation of regions of Germania, to the tribal expansions of the Migration Period</p>
+                                    <a href="thor-the-thunder-god/index.html" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item post-presentation lazy  background"
+                data-src="https://images.unsplash.com/photo-1503662549813-28954e75f215?ixlib&#x3D;rb-0.3.5&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ&amp;s&#x3D;85b1b1454e149b001e2415a1d98da039">
+                    <div class="gradient gradient1 d-flex align-items-center">
+                        <div class="container d-flex align-items-center">
+                            <div class="row">
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <span class="badge animated fadeInDown post-visibility post-members">members</span>
+                                    <h1 class="animated fadeInUp">Astronomers announce discovering ten tiny Jovian satellites</h1>
+                                    <div class="post-tags animated fadeIn">
+                                            <a href="tag/science/index.html">Science</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <p class="animated fadeInDown d-none d-md-block spacing-members">On Tuesday, astronomers of the Carnegie Institution for Science in Washington, DC, United States, announced the discovery of ten small satellites orbiting Jupiter.</p>
+                                    <a href="astronomers-announce-discovering-ten-tiny-jovian-satellites/index.html" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item post-presentation lazy  background"
+                data-src="https://images.unsplash.com/photo-1536567901538-b873c1915f79?ixlib&#x3D;rb-0.3.5&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ&amp;s&#x3D;128e33d79dc67a5e718420a296f6ef84">
+                    <div class="gradient gradient1 d-flex align-items-center">
+                        <div class="container d-flex align-items-center">
+                            <div class="row">
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <span class="badge animated fadeInDown post-visibility post-public">public</span>
+                                    <h1 class="animated fadeInUp">Everything you need to know about Valkyries</h1>
+                                    <div class="post-tags animated fadeIn">
+                                            <a href="tag/history/index.html">History</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md col-lg col-xs-12">
+                                    <p class="animated fadeInDown d-none d-md-block spacing-public">The word valkyrie derives from Old Norse valkyrja (plural valkyrjur), which is composed of two words: the noun valr (referring to the slain on the battlefield) and the verb kjósa (meaning "to choose").</p>
+                                    <a href="everything-you-need-to-know-about-valkyries/index.html" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
 
-{% extends 'base.html' %}
-{% block head_title %}       {% endblock %}
-{% block content %}
- 
-{% comment %} {% for obj in likes %}
-    {{obj.status}}
-    {{obj.post}}
-    {{obj.post_id}}
-{% endfor %} {% endcomment %}
-{% for obj in object_list %}
-    <h2>{{obj.title}}</h2>
-    <h4>{{obj.content}}</h4>
-    <h4>{{obj.id}}</h4>
-    
-{% endfor %}
+        <!-- MOBILE CAROUSEL CONTROLS -->
 
-{% endblock %}
+        <a class="carousel-control-prev d-md-none" href="#featured-news-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next d-md-none" href="#featured-news-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+        <!-- CAROUSEL INDICATORS -->
+        <div class="container indicator-container">
+            <div class="row carousel-indicators">
+                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator active" data-target="#featured-news-carousel" data-slide-to="0">
+                    <div class="indicator-index">
+                        <h1>1</h1>
+                    </div>
+                    <div class="indicator-content">
+                        <h4>Thor, the Nordic God</h4>
+                            <p>by <a href="author/diego/index.html">Diego Balmaceda</a></p>
+                    </div>
+                </div>
+                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator " data-target="#featured-news-carousel" data-slide-to="1">
+                    <div class="indicator-index">
+                        <h1>2</h1>
+                    </div>
+                    <div class="indicator-content">
+                        <h4>Astronomers announce discovering ten tiny Jovian satellites</h4>
+                            <p>by <a href="author/diego/index.html">Diego Balmaceda</a></p>
+                    </div>
+                </div>
+                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator " data-target="#featured-news-carousel" data-slide-to="2">
+                    <div class="indicator-index">
+                        <h1>3</h1>
+                    </div>
+                    <div class="indicator-content">
+                        <h4>Everything you need to know about Valkyries</h4>
+                            <p>by <a href="author/diego/index.html">Diego Balmaceda</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="latest-post">
+            <div class="container d-md-flex align-items-center">
+                <span class="badge badge-primary">Latest Post</span>
+                <a href="thor-the-thunder-god/index.html" class="d-md-inline-flex d-block">Thor, the Nordic God <span>by Diego Balmaceda</span></a>
+                <span class="badge post-visibility post-paid">paid</span>
+            </div>
+        </div>
+
+<div id="main">
+    <div class="container">
+        <div class="row" id="post-loop-wrapper">
+        <div class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+    <div class="post post-presentation first-post lazy  background"
+         data-src="https://images.unsplash.com/photo-1519125478587-9e2e97231d2c?ixlib&#x3D;rb-0.3.5&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ&amp;s&#x3D;f555c229fd7926ccd7b3c41a288a2f54">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-paid">paid</span>
+            <div class="float-top">
+                <div class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/thor-the-thunder-god/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Thor%2C%20the%20Nordic%20God&amp;url=https://valkyrie.xaes.dev/thor-the-thunder-god/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <h2><a href="thor-the-thunder-god/index.html">Thor, the Nordic God</a></h2>
+                <div class="post-tags">
+                        <a href="tag/history/index.html">History</a>
+                </div>
+                <div class="separator"></div>
+                <p class="d-none d-sm-block">Thor is a prominently mentioned god throughout the recorded history of the Germanic peoples, from the Roman occupation of regions of Germania, to the tribal expansions of the Migration Period</p>
+                <a href="thor-the-thunder-god/index.html" class="btn btn-no-background">Read Post <i class="fa fa-chevron-right"></i></a>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+
+        
+        
+
+        <div class="col-xs-12 col-sm-12 col-lg-4 col-md-12">
+    <div class="post post-presentation second-post lazy  background"
+         data-src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=d04cc88e0936763c6eb1d5cf268f6df2">
+        <div class="gradient gradient2">
+            <h3><a href="a-peak-into-scandinavias-origin/index.html">A peek into Scandinavia&#x27;s origin</a></h3>
+            <div class="post-tags">
+                <span class="badge post-visibility post-public">public</span>
+                    <a href="tag/history/index.html">History</a>
+            </div>
+            <div class="share-icons">
+                <div class="icon-container">
+                            <a href="author/diego/index.html" class="author-info">
+                                <div class="author-image background lazy" data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                            </a>
+                    <i class="fa fa-share d-none d-sm-block "></i>
+                    <div class="icons d-none d-sm-block">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/a-peak-into-scandinavias-origin/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/share?text=A%20peek%20into%20Scandinavia's%20origin&amp;url=https://valkyrie.xaes.dev/a-peak-into-scandinavias-origin/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="float-bottom">
+                <p>The term Scandinavia in local usage covers the three kingdoms of Denmark, Norway, and Sweden. However, in English usage, the term also sometimes refers to the Scandinavian Peninsula</p>
+                <a href="a-peak-into-scandinavias-origin/index.html" class="btn btn-no-background">Read Post <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1503662549813-28954e75f215?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=85b1b1454e149b001e2415a1d98da039">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-members">members</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/astronomers-announce-discovering-ten-tiny-jovian-satellites/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Astronomers%20announce%20discovering%20ten%20tiny%20Jovian%20satellites&amp;url=https://valkyrie.xaes.dev/astronomers-announce-discovering-ten-tiny-jovian-satellites/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="astronomers-announce-discovering-ten-tiny-jovian-satellites/index.html">Astronomers announce discovering ten tiny Jovian satellites</a></h3>
+                <div class="post-tags">
+                        <a href="tag/science/index.html">Science</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1527409335569-f0e5c91fa707?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=a7dfe365d0259a816ca47b35f5559948">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/fossil-genome/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Fossil%20genome%20shows%20hybrid%20of%20two%20extinct%20species%20of%20human&amp;url=https://valkyrie.xaes.dev/fossil-genome/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="fossil-genome/index.html">Fossil genome shows hybrid of two extinct species of human</a></h3>
+                <div class="post-tags">
+                        <a href="tag/science/index.html">Science</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1516565340510-21016b8fc86c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=644205802c249276155f94a757ef7446">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-paid">paid</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/manchester-city-beats-chelsea-2-0/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Manchester%20City%20beats%20Chelsea%202-0&amp;url=https://valkyrie.xaes.dev/manchester-city-beats-chelsea-2-0/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="manchester-city-beats-chelsea-2-0/index.html">Manchester City beats Chelsea 2-0</a></h3>
+                <div class="post-tags">
+                        <a href="tag/sports/index.html">Sports</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1528837516156-0a7225a43641?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=51b36662ea68d328215bd0043adc5090">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/ireland/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=A%20quick%20look%20to%20Iceland%20landscapes&amp;url=https://valkyrie.xaes.dev/ireland/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="ireland/index.html">A quick look to Iceland landscapes</a></h3>
+                <div class="post-tags">
+                        <a href="tag/travel/index.html">Travel</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1536567901538-b873c1915f79?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=128e33d79dc67a5e718420a296f6ef84">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/everything-you-need-to-know-about-valkyries/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Everything%20you%20need%20to%20know%20about%20Valkyries&amp;url=https://valkyrie.xaes.dev/everything-you-need-to-know-about-valkyries/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="everything-you-need-to-know-about-valkyries/index.html">Everything you need to know about Valkyries</a></h3>
+                <div class="post-tags">
+                        <a href="tag/history/index.html">History</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1505504506221-02359e1e5812?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=134aea98d59b9fe66e4d3cc1f4569f89">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/welcome/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Welcome%20to%20Ghost&amp;url=https://valkyrie.xaes.dev/welcome/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="welcome/index.html">Welcome to Ghost</a></h3>
+                <div class="post-tags">
+                        <a href="tag/getting-started/index.html">Getting Started</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/diego/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/10258553_490703191059311_1426632935227693623_o-min.jpg"></div>
+                        Diego Balmaceda
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="https://images.unsplash.com/photo-1535224206242-487f7090b5bb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=808c7e1dc18dbd4eb70bcb8e5aee3131">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/the-editor/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Using%20the%20Ghost%20editor&amp;url=https://valkyrie.xaes.dev/the-editor/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="the-editor/index.html">Using the Ghost editor</a></h3>
+                <div class="post-tags">
+                        <a href="tag/getting-started/index.html">Getting Started</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/johndoe/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/Jason-Davis-headshot-min.jpg"></div>
+                        John Doe
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="../casper.ghost.org/v1.0.0/images/tags.jpg">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/using-tags/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Organising%20your%20content%20with%20tags&amp;url=https://valkyrie.xaes.dev/using-tags/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="using-tags/index.html">Organising your content with tags</a></h3>
+                <div class="post-tags">
+                        <a href="tag/getting-started/index.html">Getting Started</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/johndoe/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/Jason-Davis-headshot-min.jpg"></div>
+                        John Doe
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="post post-square lazy post-presentation  background"
+         data-src="../casper.ghost.org/v1.0.0/images/team.jpg">
+        <div class="gradient gradient2 d-flex align-items-center">
+            <span class="badge post-visibility post-public">public</span>
+            <div class="float-top">
+                <div href="#" class="share-icons d-none d-sm-block">
+                    <div class="icon-container">
+                        <i class="fa fa-share"></i>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://valkyrie.xaes.dev/managing-users/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/share?text=Managing%20Ghost%20users&amp;url=https://valkyrie.xaes.dev/managing-users/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="separator"></div>
+                <h3><a href="managing-users/index.html">Managing Ghost users</a></h3>
+                <div class="post-tags">
+                        <a href="tag/getting-started/index.html">Getting Started</a>
+                </div>
+            </div>
+            <div class="float-bottom">
+                    <a href="author/johndoe/index.html" class="vertical-align author-info">
+                        <div class="author-image background lazy "  data-src="content/images/2018/09/Jason-Davis-headshot-min.jpg"></div>
+                        John Doe
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>    </div>
+</div>
+
+<!-- PAGINATION -->
+<div id="pagination">
+    <div class="container">
+        <div id="load-more" class="text-center page-indicator">
+            More Posts <i class="fas fa-arrow-down"></i>
+        </div>
+    </div>
+</div>
+
+
+
+        <div id="search-section">
+    <form class="container">
+        <input autocomplete="off" ype="text" class="form form-control" id="search-field" placeholder="Search a post...">
+        <input type="submit" value="search" class="d-none">
+        <div id="results"></div>
+    </form>
+    <i class="search-panel-toggle fa fa-close fas fa-times"></i>
+    <i class="fas fa-spinner"></i>
+</div>
