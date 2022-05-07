@@ -1,7 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
     <html>
     <head>
-
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="HandheldFriendly" content="True">
@@ -12,13 +12,19 @@
         <meta name="description" content="Thoughts, stories and ideas.">
 
         <style>
-            .dark .background-pattern{background-image:url("static/assets/images/dark-pattern4931.png?v=cf893e589b")}.light .background-pattern{background-image:url("static/assets/images/light-pattern4931.png?v=cf893e589b")}.dark .post-presentation .author-image-fill{background-image:url("static/assets/images/prof-icon-white4931.png?v=cf893e589b")}.light .post-presentation .author-image-fill{background-image:url("static/assets/images/prof-icon-dark4931.png?v=cf893e589b")}.dark .logo-light,.light .logo-dark{display:inline-block}.dark .logo-dark,.light .logo-light{display:none}
+            .dark .background-pattern{background-image:url("{% static '/assets/images/dark-pattern4931.png?v=cf893e589b' %}")}.light .background-pattern{background-image:url("/static/assets/images/light-pattern4931.png?v=cf893e589b")}.dark .post-presentation .author-image-fill{background-image:url("assets/images/prof-icon-white4931.png?v=cf893e589b")}.light .post-presentation .author-image-fill{background-image:url("assets/images/prof-icon-dark4931.png?v=cf893e589b")}.dark .logo-light,.light .logo-dark{display:inline-block}.dark .logo-dark,.light .logo-light{display:none}
+        </style>
+
+        <style>
+            .dark .background-pattern{background-image:url("/static/assets/images/dark-pattern4931.png%3Fv%3Dcf893e589b")}.light .background-pattern{background-image:url("/static/assets/images/light-pattern4931.png?v=cf893e589b")}.dark .post-presentation .author-image-fill{background-image:url("assets/images/prof-icon-white4931.png?v=cf893e589b")}.light .post-presentation .author-image-fill{background-image:url("assets/images/prof-icon-dark4931.png?v=cf893e589b")}.dark .logo-light,.light .logo-dark{display:inline-block}.dark .logo-dark,.light .logo-light{display:none}
         </style>
 
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600|Oswald:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href="static/assets/built/css/extra4931.css?v=cf893e589b" rel="stylesheet" type="text/css">
+        <link href="/static/assets/built/css/extra4931.css%3Fv%3Dcf893e589b" rel="stylesheet" type="text/css">
+        <link href="/static/assets/images/light-pattern4931.png" rel="stylesheet" type="text/css">
         
-        <link href="static/assets/built/css/style4931.css?v=cf893e589b" rel="stylesheet" type="text/css">
+        <link href="/static/assets/built/css/style4931.css%3Fv%3Dcf893e589b" rel="stylesheet" type="text/css">
+
 
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
         <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
@@ -82,13 +88,13 @@
 }
     </script>
 
-    <script defer src="public/members.min4931.js?v=cf893e589b"></script>
+    <script defer src="/static/public/members.min4931.js?v=cf893e589b"></script>
     <meta name="generator" content="Ghost 3.14" />
     <link rel="alternate" type="application/rss+xml" title="Valkyrie" href="rss/index.html" />
 
     </head>
     <body class="home-template">
-            {% load static %}
+
             {%include 'snippet/nav.html'%}          
             {%block content%}
             {% comment %} content {% endcomment %}

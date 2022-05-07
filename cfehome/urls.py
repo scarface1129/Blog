@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import (path,include)
 from Users.views import RegisterView, activate_user_view
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', RegisterView.as_view(), name=('register')),
