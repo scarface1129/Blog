@@ -12,16 +12,12 @@ from django.urls import reverse
 
 
 class BlogListView(LoginRequiredMixin, ListView):
-    model = Blogs
-    template_name = 'Blog/ListView'
 
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super(BlogListView, self).get_context_data(*args, **kwargs)
-    #     Blog = Blogs.objects.all()
-    #     Like = Likes.objects.all()
-    #     context['blog_list'] = Blog 
-    #     context['likes'] = Like  
-    #     return context
+    def get(self,request):
+        Blog = Blogs.objects.all().order_by('-id')
+        context = {'blog_list': Blog}
+        
+        return render(request, "Blog/blogs_list.html", context)
 
 class BlogDetailView(LoginRequiredMixin, DetailView):
     template_name = 'Blog/blog_detail.html'
@@ -32,7 +28,7 @@ class BlogDetailView(LoginRequiredMixin, DetailView):
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
         pk = self.kwargs['pk']
         Like = Likes.objects.filter(post_id = pk).count()
-        comment = Comments.objects.filter(post_id = pk)
+        comment = Comments.objects.filter(post_id = pk).order_by('-id')[:3]
         context['likes'] = Like
         context['comment'] = comment
         return context

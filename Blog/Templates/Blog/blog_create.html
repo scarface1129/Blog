@@ -1,19 +1,20 @@
-{%extends 'base.html'%}
+{% comment %} {%extends 'base.html'%}
 {%block head_title%} | {{block.super}}  {%endblock%}
-{%block content%}
+{%block content%} {% endcomment %}
 <h1>{{title}}</h1>
     {%if form.errors.non_field_errors %}
     {{ form.errors.non_field_errors }}
     {%endif%}
-
-<form method="POST"> {% csrf_token %}
+<div>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
         {{ form.as_p}}
 	<button type="submit"> save </button>
-
 </form>
+</div>
 
 
-{%endblock%}
+
+{% comment %} {%endblock%} {% endcomment %}
 
 <!-- <input type="text" name="name" placeholder="Your Name"><br/><br/>
 	<input type="text" name="location" placeholder="Location"><br/><br/>

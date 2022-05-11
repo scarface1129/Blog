@@ -10,6 +10,9 @@ class BlogForm(forms.ModelForm):
             'user',
             'title',
             'content',
+            'media',
+            'category',
+            'precont',
                     
         ]   
 

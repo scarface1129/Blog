@@ -5,10 +5,20 @@ from django.urls import reverse
 
 # Create your models here.
 User = settings.AUTH_USER_MODEL
+class BlogCategory(models.Model):
+	name = models.CharField(max_length=30, blank=True, null=True)
+
+	def __str__(self):
+		return self.name
 class Blogs(models.Model):
 	user            = models.ForeignKey(User, on_delete=models.CASCADE)
+	category		= models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
 	title           = models.CharField(max_length=120)
+	precont         = models.CharField(max_length=120)
 	content         = models.TextField(help_text="separate each item by a comma")
+	media           = models.ImageField(upload_to='media', blank=True, null=True)
+	timestamp       = models.DateTimeField( auto_now_add= True)
+	updated         = models.DateTimeField(auto_now= True)
 
 
 	def get_absolute_url(self):
