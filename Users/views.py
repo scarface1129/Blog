@@ -1,10 +1,11 @@
 from django.shortcuts import render,get_object_or_404, redirect
-from django.views.generic import DetailView, View, CreateView, UpdateView
+from django.views.generic import DetailView, View, CreateView, UpdateView, ListView
 from .forms import RegisterForm, ProfileUpdate
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile
+from Blog.models import Blogs
 
 
 
@@ -47,4 +48,23 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     login_url = '/login/'
 
     def get_queryset(self):
-        return Profile.objects.filter(user=self.request.user)
+        pk = self.kwargs['pk']
+        print(Profile.objects.filter(user_id = pk))
+        return Profile.objects.filter(user_id = pk)
+class ProfileList(LoginRequiredMixin,ListView):
+     def get(self, request):	
+        profile = Profile.objects.all()
+        latest = Blogs.objects.all().order_by('-id').first()
+        context = {'object_list': profile,'latest': latest}
+        return render(request, 'Users/profile_list.html', context )
+
+
+class ProfileDetail(LoginRequiredMixin, DetailView):
+    def get(self, request, *args, **kwargs):	
+        pk = self.kwargs['pk']
+        profile = Profile.objects.get(user_id = pk)
+        count = Blogs.objects.filter(user_id = pk).count()
+        blog = Blogs.objects.filter(user_id = pk).order_by('-id')
+        latest = Blogs.objects.all().order_by('-id').first()
+        context = {'object': profile, 'blog_count': count, 'latest': latest, 'blog_list': blog}
+        return render(request, 'Users/profile.html', context )

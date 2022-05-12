@@ -7,7 +7,6 @@ class BlogForm(forms.ModelForm):
         model = Blogs 
         fields = [
             
-            'user',
             'title',
             'content',
             'media',

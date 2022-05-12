@@ -1,146 +1,39 @@
+{% extends 'base.html'%}
+{% block head_title%} {% endblock%}
+{% block content%} 
 
-
-{%extends "base.html"%}
-{%block head_title%}{{block.super}}{%endblock%}
-{%block content%}
-<div class="hero-unit">
-    <div id="featured-news-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for item in blog_list %}
-                {% if forloop.counter == 1 %}
-                <div class="carousel-item post-presentation lazy active background"
-                    data-src="{{item.media.url}}">
-                        <div class="gradient gradient1 d-flex align-items-center">
-                            <div class="container d-flex align-items-center">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xs-12">
-                                        <span class="badge animated fadeInDown post-visibility post-paid">paid</span>
-                                        <h1 class="animated fadeInUp">{{item.title}}</h1>
-                                        <div class="post-tags animated fadeIn">
-                                                <a href="tag/history/index.html">{{item.category}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md col-lg col-xs-12">
-                                        <p class="animated fadeInDown d-none d-md-block spacing-paid">{{item.precont}}</p>
-                                        <a href="{% url 'Blog:Blog_detail' item.id %}" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="page-info-wrapper post-presentation active lazy background"
+data-src="{{object.media.url}}">
+    <div class="gradient gradient1">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-12 col-md col-lg col-xs-12">
+                    <h1 class="animated fadeInUp">Tag: {{object.name}}</h1>
+                    <p class="animated fadeInUp">{{object.about}}</p>
                 </div>
-                {% elif forloop.counter == 2%}
-                    <div class="carousel-item post-presentation lazy  background"
-                        data-src="{{item.media.url}}">
-                            <div class="gradient gradient1 d-flex align-items-center">
-                                <div class="container d-flex align-items-center">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md col-lg col-xs-12">
-                                            <span class="badge animated fadeInDown post-visibility post-members">members</span>
-                                            <h1 class="animated fadeInUp">{{item.title}}</h1>
-                                            <div class="post-tags animated fadeIn">
-                                                    <a href="tag/science/index.html">{{item.category}}</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md col-lg col-xs-12">
-                                            <p class="animated fadeInDown d-none d-md-block spacing-members">{{item.precont}}</p>
-                                            <a href="{% url 'Blog:Blog_detail' item.id %}" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                {% elif forloop.counter == 3%}
-                <div class="carousel-item post-presentation lazy  background"
-                    data-src="{{item.media.url}}">
-                        <div class="gradient gradient1 d-flex align-items-center">
-                            <div class="container d-flex align-items-center">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md col-lg col-xs-12">
-                                        <span class="badge animated fadeInDown post-visibility post-public">public</span>
-                                        <h1 class="animated fadeInUp">{{item.title}}</h1>
-                                        <div class="post-tags animated fadeIn">
-                                                <a href="tag/history/index.html">{{item.category}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md col-lg col-xs-12">
-                                        <p class="animated fadeInDown d-none d-md-block spacing-public">{{item.precont}}</p>
-                                        <a href="{% url 'Blog:Blog_detail' item.id %}" class="btn btn-no-background animated fadeIn">Read Post <i class="fa fa-chevron-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                {% endif %}
-                
-                
-            {% endfor %}
-               
+            </div>
         </div>
 
-        <!-- MOBILE CAROUSEL CONTROLS -->
-
-        <a class="carousel-control-prev d-md-none" href="#featured-news-carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next d-md-none" href="#featured-news-carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-        <!-- CAROUSEL INDICATORS -->
-        <div class="container indicator-container">
-            <div class="row carousel-indicators">
-            {% for item in blog_list %}
-                {% if forloop.counter == 1 %}
-                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator active" data-target="#featured-news-carousel" data-slide-to="0">
-                    <div class="indicator-index">
-                        <h1>1</h1>
-                    </div>
-                    <div class="indicator-content">
-                        <h4>{{item.title}}</h4>
-                            <p>by <a href="author/diego/index.html">{{item.user.username}}</a></p>
-                    </div>
-                </div>
-                {% elif forloop.counter == 2 %}
-                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator " data-target="#featured-news-carousel" data-slide-to="1">
-                    <div class="indicator-index">
-                        <h1>2</h1>
-                    </div>
-                    <div class="indicator-content">
-                        <h4>{{item.title}}</h4>
-                            <p>by <a href="author/diego/index.html">{{item.user.username}}</a></p>
-                    </div>
-                </div>
-                {% elif forloop.counter == 3%}
-                <div class="d-none d-md-flex align-items-center col-md-4 col-lg-4 indicator " data-target="#featured-news-carousel" data-slide-to="2">
-                    <div class="indicator-index">
-                        <h1>3</h1>
-                    </div>
-                    <div class="indicator-content">
-                        <h4>{{item.title}}</h4>
-                            <p>by <a href="author/diego/index.html">{{item.user.username}}</a></p>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
+        <!-- AUTHOR INFO -->
+        <div class="author-wrapper post-presentation container">
+            <div class="d-flex justify-content-between align-items-center animated fadeIn">
+                <p class="author-post-count"><i class="fas fa-pencil-alt"></i> {{blog_count}} posts</p>
             </div>
         </div>
     </div>
 </div>
-    {% for item in blog_list %}
-    {% if forloop.counter == 1%}
+
+
         <div class="latest-post">
             <div class="container d-md-flex align-items-center">
                 <span class="badge badge-primary">Latest Post</span>
-                <a href="{% url 'Blog:Blog_detail' item.id %}" class="d-md-inline-flex d-block"> {{item.title}} <span>by {{item.user.username}}</span></a>
+                <a href="{% url 'Blog:Blog_detail' latest.id %}" class="d-md-inline-flex d-block">{{latest.title}} <span>by {{latest.user.username}}</span></a>
                 <span class="badge post-visibility post-paid">paid</span>
             </div>
         </div>
-    {% endif %}
-    {% endfor %}
+
 <div id="main">
-    <div class="container">    
+    <div class="container">
         <div class="row" id="post-loop-wrapper">
             {% for item in blog_list %}
                 {% if forloop.counter == 1 %}
@@ -243,23 +136,6 @@
             {% endfor %}
         </div>
     </div>
-</div> 
-
-<div id="pagination">
-    <div class="container">
-        <div id="load-more" class="text-center page-indicator">
-            More Posts <i class="fas fa-arrow-down"></i>
-        </div>
-    </div>
 </div>
 
-        <script>
-            var ghosthunter_key = "96d6c0298facdbf7cb2c499fcb";
-            var maxPages = parseInt('2');
-            var endMessage = 'No more posts';
-            var Message = 'More posts';
-        </script>
-
-       
-
-{%endblock%}
+{% endblock %}

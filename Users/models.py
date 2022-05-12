@@ -18,11 +18,15 @@ class Profile(models.Model):
     user                = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name           = models.CharField(max_length=120, null=True)
     phone_number        = PhoneNumberField(null=True, unique=True)
+    Country             = models.CharField(max_length=120, null=True)
     address             = models.TextField(blank=True, null=True)
     updated             = models.DateTimeField(auto_now= True)
+    media               = models.ImageField(upload_to='media', blank=False, null=False)
+    About               = models.TextField(max_length=30, null=True)
     created_at          = models.DateTimeField(auto_now= True)          
 
-
+    def get_absolute_url(self):
+        return reverse("Users:profile", kwargs= {'pk':self.pk})
     class Meta:
         ordering=[ 'updated', 'created_at' ]
     # def get_absolute_url(self):

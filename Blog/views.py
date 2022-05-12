@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render,get_object_or_404, redirect
 from django.views.generic import DetailView, View, CreateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Blogs, Likes, Comments
+from .models import Blogs, Likes, Comments, BlogCategory
 from .forms import BlogForm, LikeForm,CommentForm
 from django.urls import reverse
 
@@ -11,10 +11,10 @@ from django.urls import reverse
 
 
 
-class BlogListView(LoginRequiredMixin, ListView):
+class BlogListView(ListView):
 
     def get(self,request):
-        Blog = Blogs.objects.all().order_by('-id')
+        Blog = Blogs.objects.all().order_by('-id')[:8]
         context = {'blog_list': Blog}
         
         return render(request, "Blog/blogs_list.html", context)
@@ -77,3 +77,20 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):               
         obj = form.save(commit=False)
         return super(CommentCreateView, self).form_valid(form)
+
+class BlogCategoryList(LoginRequiredMixin,ListView):
+     def get(self, request):	
+        category = BlogCategory.objects.all()
+        latest = Blogs.objects.all().order_by('-id').first()
+        context = {'object_list': category,'latest': latest}
+        return render(request, 'Blog/blog_category.html', context )
+
+class BlogCategoryDetail(LoginRequiredMixin, DetailView):
+    def get(self, request, *args, **kwargs):	
+        pk = self.kwargs['pk']
+        profile = BlogCategory.objects.get(id = pk)
+        count = Blogs.objects.filter(category = pk).count()
+        blog = Blogs.objects.filter(category = pk).order_by('-id')
+        latest = Blogs.objects.all().order_by('-id').first()
+        context = {'object': profile, 'blog_count': count, 'latest': latest, 'blog_list': blog}
+        return render(request, 'Blog/blog_category_detail.html', context )

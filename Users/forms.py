@@ -58,5 +58,6 @@ class ProfileUpdate(forms.ModelForm):
             'full_name',
             'phone_number',
             'address',
+			'media',
                     
         ]

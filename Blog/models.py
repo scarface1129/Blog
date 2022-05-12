@@ -6,7 +6,9 @@ from django.urls import reverse
 # Create your models here.
 User = settings.AUTH_USER_MODEL
 class BlogCategory(models.Model):
-	name = models.CharField(max_length=30, blank=True, null=True)
+	name 			= models.CharField(max_length=30, blank=True, null=True)
+	about 			= models.TextField(blank=True, null=True)
+	media           = models.ImageField(upload_to='media', blank=True, null=True)
 
 	def __str__(self):
 		return self.name
@@ -16,7 +18,7 @@ class Blogs(models.Model):
 	title           = models.CharField(max_length=120)
 	precont         = models.CharField(max_length=120)
 	content         = models.TextField(help_text="separate each item by a comma")
-	media           = models.ImageField(upload_to='media', blank=True, null=True)
+	media           = models.ImageField(upload_to='media', blank=False, null=False)
 	timestamp       = models.DateTimeField( auto_now_add= True)
 	updated         = models.DateTimeField(auto_now= True)
 

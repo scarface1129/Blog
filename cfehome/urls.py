@@ -18,12 +18,16 @@ from django.urls import (path,include)
 from Users.views import RegisterView, activate_user_view
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', RegisterView.as_view(), name=('register')),
     path('activate/<code>', activate_user_view, name='activate'),
     path('profile/', include('Users.urls')),
     path('blog/', include('Blog.urls')),
+    path('about_us/', TemplateView.as_view(template_name='about.html'), name="about")
 ]
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
